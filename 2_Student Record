@@ -1,3 +1,11 @@
+Write a cpp program to define a class called student with data members as roll no., name,marks. Define the appropriate member function.
+
+1.setdata
+2. display for reading and displaying the data and 
+also define a member function called sort_data() to sort 5 students records according to roll no., name, and marks .
+
+
+
 #include<iostream>
 using namespace std;
 class student
