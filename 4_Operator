@@ -1,0 +1,41 @@
+Write a program to implement following operators
+  ob3=(ob1+ob2)*ob4
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+        public:
+                int n;
+
+                A operator+ (A obj)
+                {
+                        A temp;
+                        temp.n=n+obj.n;
+                        return temp;
+                }
+
+                A operator* (A obj)
+                {
+                        A temp;
+                        temp.n=n*obj.n;
+                        return temp;
+                }
+};
+
+int main()
+{
+        A ob1,ob2,ob3,ob4;
+
+        cout<<"Enter the ob1 number"<<endl;
+        cin>>ob1.n;
+        cout<<"Enter the ob2 number"<<endl;
+        cin>>ob2.n;
+        cout<<"Enter the ob4 number"<<endl;
+        cin>>ob4.n;
+
+        ob3=(ob1+ob2)*ob4;
+
+        cout<<"Result : "<<ob3.n<<endl;
+}
