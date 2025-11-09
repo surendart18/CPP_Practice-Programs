@@ -1,0 +1,35 @@
+Write a program to implement pre-decrement operator function using member function.
+
+
+#include<iostream>
+using namespace std;
+
+
+class A
+{
+        public:
+                int n;
+
+                A operator--()
+                {
+                        A temp;
+                        temp.n=--n;
+                        return temp;
+                }
+};
+
+
+int main()
+{
+        A ob1,ob2;
+
+
+        cout<<"Enter the number"<<endl;
+        cin>>ob1.n;
+
+
+        ob2=--ob1;
+
+
+        cout<<"Result :"<<ob2.n<<endl;
+}
