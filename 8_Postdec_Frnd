@@ -1,0 +1,34 @@
+Write a program to implement post-decrement operator function using friend function.
+
+
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+        public:
+                int n;
+
+                friend A operator--(A &,int);
+};
+A operator--(A &obj,int)
+{
+        A temp;
+        temp.n=obj.n;
+        obj.n--;
+        return temp;
+}
+
+int main()
+{
+        A ob1,ob2;
+
+        cout<<"Enter the number"<<endl;
+        cin>>ob1.n;
+
+        ob2=ob1--;
+
+        cout<<"Before Modify the value :  "<<ob2.n<<endl;
+        cout<<"After Modify the value :  "<<ob1.n<<endl;
+}
