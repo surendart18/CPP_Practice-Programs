@@ -1,0 +1,81 @@
+#include<iostream>
+using namespace std;
+class student
+{
+        public:
+                int roll;
+                string name;
+                float mark;
+
+                void setdata()
+                {
+                        cout<<"Enter the roll no."<<endl;
+                        cin>>roll;
+                        cout<<"Enter the name"<<endl;
+                        cin>>name;
+                        cout<<"Enter the marks"<<endl;
+                        cin>>mark;
+                }
+
+
+                void display()
+                {
+                        cout<<roll<<"   "<<name<<"   "<<mark<<endl;
+                }
+
+                static void swap_data(student &a,student &b)
+                {
+                        student temp=a;
+                        a=b;
+                        b=temp;
+                }
+
+                static void sort_data(student s[],int n,int op)
+                {
+                        for(int i=0;i<n-1;i++)
+                        {
+                                for(int j=i+1;j<n;j++)
+                                {
+                                        if(op==1 && s[i].roll>s[j].roll)
+                                        {
+                                                swap_data(s[i],s[j]);
+                                        }
+                                        else if(op==2 && s[i].name>s[j].name)
+                                        {
+                                                swap_data(s[i],s[j]);
+                                        }
+                                        else if(op==3 && s[i].mark>s[j].mark)
+                                        {
+                                                swap_data(s[i],s[j]);
+                                        }
+                                }
+                        }
+                }
+};
+
+
+
+int main()
+{
+        student s[5];
+        cout<<"Enter the details of 5 students"<<endl;
+
+        for(int i=0;i<5;i++)
+        {
+                s[i].setdata();
+        }
+
+        int op;
+        cout<<"Enter the option 1.Roll 2.Name 3.Mark"<<endl;
+        cin>>op;
+
+        student::sort_data(s,5,op);
+
+        cout<<"sorted student record\n";
+        for(int i=0;i<5;i++)
+        {
+                s[i].display();
+        }
+
+
+}
