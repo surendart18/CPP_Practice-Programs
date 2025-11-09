@@ -1,0 +1,28 @@
+Write a program to implement Extraction operator (>>) using friend function.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+        public:
+                int n;
+
+                friend istream& operator>>(istream& ,A &);
+};
+istream& operator>>(istream& in,A &obj)
+{
+        in>>obj.n;
+        return in;
+}
+
+int main()
+{
+        A ob1;
+
+        cout<<"Enter the number"<<endl;
+
+        cin>>ob1;               // function call
+
+        cout<<"You entered: "<<ob1.n<<endl;
+}
