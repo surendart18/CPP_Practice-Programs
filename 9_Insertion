@@ -1,0 +1,28 @@
+Write a program to implement insertion operator (<<) using friend function.
+
+#include<iostream>
+using namespace std;
+
+class A
+{
+        public:
+                int n;
+
+                friend ostream& operator<<(ostream& , A &);
+};
+
+ostream& operator<<(ostream& out,A &obj)
+{
+        out<<obj.n;
+        return out;
+}
+
+int main()
+{
+        A ob1,ob2;
+
+        cout<<"Enter the number"<<endl;
+        cin>>ob1.n;
+
+        cout<<ob1;      // function call
+}
