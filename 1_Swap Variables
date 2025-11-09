@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class A
+{
+        int x,y;
+        public:
+                void getval()
+                {
+                        cout<<"Enter the values of a and b\n";
+                        cin>>x>>y;
+                }
+
+                void display()
+                {
+                        cout<<"x= "<<x<<endl<<"y= "<<y<<endl;
+                }
+
+                friend void swapval(A &);
+};
+
+void swapval(A &obj)
+{
+        int temp=obj.x;
+        obj.x=obj.y;
+        obj.y=temp;
+}
+
+int main()
+{
+        A obj;
+        obj.getval();
+        cout<<"Before swap"<<endl;
+        obj.display();
+        swapval(obj);
+        cout<<"After swap"<<endl;
+        obj.display();
+}
