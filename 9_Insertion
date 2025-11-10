@@ -19,7 +19,7 @@ ostream& operator<<(ostream& out,A &obj)
 
 int main()
 {
-        A ob1,ob2;
+        A ob1;
 
         cout<<"Enter the number"<<endl;
         cin>>ob1.n;
