@@ -39,41 +39,4 @@ int main()
         ob3=ob1*ob2/ob4;
 
         cout<<"Result: "<<ob3.n<<endl;
-}#include<iostream>
-using namespace std;
-
-class A
-{
-        public:
-                int n;
-
-                A operator*(A obj)
-                {
-                        A temp;
-                        temp.n= n*obj.n;
-                        return temp;
-                }
-
-                A operator/(A obj)
-                {
-                        A temp;
-                        temp.n= n/obj.n;
-                        return temp;
-                }
-};
-
-int main()
-{
-        A ob1,ob2,ob3,ob4;
-
-        cout<<"Enter the number for ob1"<<endl;
-        cin>>ob1.n;
-        cout<<"Enter the number for ob2"<<endl;
-        cin>>ob2.n;
-        cout<<"Enter the number for ob4"<<endl;
-        cin>>ob4.n;
-
-        ob3=ob1*ob2/ob4;
-
-        cout<<"Result: "<<ob3.n<<endl;
 }
