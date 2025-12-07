@@ -1,0 +1,38 @@
+Write a cpp program to accept 10 integers in an array. Check all numbers in the array, when any negative number is found, throw an exception.
+
+
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+        int a[10];
+
+        cout<<"enter the 10 integers"<<endl;
+
+        for(int i=0;i<10;i++)
+        {
+                cin>>a[i];
+        }
+
+
+        try
+        {
+                for(int i=0;i<10;i++)
+                {
+
+                        if(a[i]<0)
+                        {
+                                throw a[i];
+                        }
+                }
+
+                cout<<"All numbers are non-negative"<<endl;
+        }
+
+        catch(int x)
+        {
+                cout<<"Exception : Negative number found: "<<x<<endl;
+        }
+}
