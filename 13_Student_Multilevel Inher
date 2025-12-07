@@ -1,0 +1,78 @@
+Consider a example of declaring the examination result. 
+Design three classes: student, exam and result. 
+The student class has data members such as those representing roll number,name, etc.
+Create the class exam by inheriting the student class.The exam class adds data members representing marks scored in six subjects.
+Derive the result from the exam class and it has its own data members such as total_marks.
+Write an interactive program to model this relationship .
+What type of inheritance this model belongs to?
+
+Ans : Multilevel Inheritance
+
+
+
+#include<iostream>
+using namespace std;
+
+class student
+{
+        public:
+                int roll;
+                char name[20];
+
+                void getStud()
+                {
+                        cout<<"Enter the roll number:"<<endl;
+                        cin>>roll;
+                        cout<<"Enter the Name:"<<endl;
+                        cin>>name;
+                }
+};
+
+class exam : public student
+{
+        public:
+                int marks[6];
+
+                void getmarks()
+                {
+                        cout<<"Enter the marks for 6 subjects: "<<endl;
+                        for(int i=0;i<6;i++)
+                        {
+                                cin>>marks[i];
+                        }
+                }
+};
+
+class result: public exam
+{
+        public:
+                int total;
+
+                void calculate()
+                {
+                        total=0;
+                        for(int i=0;i<6;i++)
+                        {
+                                total += marks[i];
+                        }
+                }
+
+                void display()
+                {
+                        cout<<"Roll Number: "<<roll<<endl;;
+                        cout<<"Name : "<<name<<endl;
+                        cout<<"Total: "<<total<<endl;
+                }
+};
+
+
+int main()
+{
+        result r;
+        r.getStud();
+        r.getmarks();
+        r.calculate();
+        r.display();
+
+}
+ 
