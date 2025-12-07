@@ -1,7 +1,6 @@
 Write a cpp program to accept 10 integers in an array. Check all numbers in the array, when any negative number is found, throw an exception.
 
 
-
 #include<iostream>
 using namespace std;
 
